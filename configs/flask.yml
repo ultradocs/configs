@@ -1,0 +1,21 @@
+name: "Flask"
+versions:
+  - "1.1.x"
+language: "Python"
+shortcut: "fl"
+#framework: ""
+source:
+  base_url: "https://flask.palletsprojects.com/en/{version}/"
+  start_urls:
+    - "https://flask.palletsprojects.com/en/{version}/"
+selectors:
+  content:
+    - "//div[@class='body']"
+
+modifier:
+  title:
+    replace:
+      - ['— Flask Documentation ([\w\d.-]+)', '']
+  content:
+    replace:
+      - ['<a class="[\w .-]+" href="#[\w.-]+" title="[\w .-]+">¶</a>', ""]

@@ -1,0 +1,26 @@
+name: "Celery"
+versions:
+  - "4.3.0"
+language: "Python"
+shortcut: "cl"
+#framework: ""
+source:
+  base_url: "https://docs.celeryproject.org/en/v{version}/"
+  start_urls:
+    - "https://docs.celeryproject.org/en/v{version}/"
+    - "https://docs.celeryproject.org/en/v{version}/genindex.html"
+  exclude_urls:
+    - "https://docs.celeryproject.org/en/v{version}/changelog.html"
+    - "https://docs.celeryproject.org/en/v{version}/whatsnew-4.3.html"
+
+selectors:
+  content:
+    - "//div[@class='body']"
+
+modifier:
+  title:
+    replace:
+      - ['— Celery [\w\d.-]+ documentation', '']
+  content:
+    replace:
+      - ['<a class="[\w .-]+" href="#[\w.-]+" title="[\w .-]+">¶</a>', ""]

@@ -1,0 +1,37 @@
+name: "Django"
+versions:
+  - "2.2"
+language: "Python"
+shortcut: "dj"
+#framework: ""
+source:
+  base_url: "https://docs.djangoproject.com/en/{version}/"
+  start_urls:
+    - "https://docs.djangoproject.com/en/{version}/"
+  exclude_urls:
+    - "https://docs.djangoproject.com/en/{version}/releases/"
+
+selectors:
+  content:
+    - "//div[@id='docs-content']"
+  lvl1:
+    - "//h1"
+  lvl2:
+    - "//h2"
+  lvl3:
+    - "//h3"
+    - "//dt"
+  lvl4:
+    - "//h4"
+  lvl5:
+    - "//h5"
+  lvl6:
+    - "//h6"
+
+modifier:
+  title:
+    replace:
+      - [" \\| Django documentation \\| Django", ""]
+  content:
+    replace:
+      - ['<a class="[\w .-]+" href="#[\w.-]+" title="[\w .-]+">¶</a>', ""]

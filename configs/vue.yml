@@ -1,0 +1,17 @@
+name: "Vue"
+versions:
+  - "2"
+language: "JavaScript"
+shortcut: "vu"
+#framework: ""
+source:
+  base_url: "https://vuejs.org/v{version}/"
+  start_urls:
+    - "https://vuejs.org/v{version}/guide/"
+    - "https://vuejs.org/v{version}/api/"
+    - "https://vuejs.org/v{version}/style-guide/"
+    - "https://vuejs.org/v{version}/cookbook/"
+
+selectors:
+  content:
+    - "//div[contains(concat(' ', @class, ' '), ' content ')]"

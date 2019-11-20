@@ -1,0 +1,22 @@
+name: "Scrapy"
+versions:
+  - "1.7"
+language: "Python"
+shortcut: "sc"
+#framework: ""
+source:
+  base_url: "https://docs.scrapy.org/en/{version}/"
+  start_urls:
+    - "https://docs.scrapy.org/en/{version}/"
+
+selectors:
+  content:
+    - "//div[@class='document']"
+
+modifier:
+  title:
+    replace:
+      - ['— Scrapy [\w\d.-]+ documentation', '']
+  content:
+    replace:
+      - ['<a class="[\w .-]+" href="#[\w.-]+" title="[\w .-]+">¶</a>', ""]

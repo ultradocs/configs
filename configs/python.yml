@@ -1,0 +1,23 @@
+name: "Python"
+versions:
+  - "3.8"
+language: "Python"
+shortcut: "py"
+#framework: ""
+source:
+  base_url: "https://docs.python.org/{version}/"
+  start_urls:
+    - "https://docs.python.org/{version}/"
+  exclude_urls:
+    - "https://docs.python.org/{version}/whatsnew/"
+selectors:
+  content:
+    - "//div[@class='body']"
+
+modifier:
+  title:
+    replace:
+      - ['— Python [\w\d.-]+ documentation', '']
+  content:
+    replace:
+      - ['<a class="[\w .-]+" href="#[\w.-]+" title="[\w .-]+">¶</a>', ""]
